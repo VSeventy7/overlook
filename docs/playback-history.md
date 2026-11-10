@@ -51,6 +51,7 @@ Rollback: revoke the newly granted notification access or TV key if desired (own
 
 ## Timeline
 
+- 2026-11-10 21:07 IST: Linked draft PR #2; verified helper recovery and singleton behavior. Made staging replacement resilient to interruption before final file permissions. Qualified playback and reboot validation remain pending.
 - 2026-11-10 21:04 IST: Verified automatic recovery after helper stop and single-instance rejection; Netflix playback progressed without exposing title/artwork.
 - 2026-11-10 21:02 IST: Added the low-RAM Android 9 fallback after the TV rejected notification access; verified private-key startup and recorded Netflix metadata limits. Actual qualified-session and reboot tests remain pending.
 - 2026-11-10 20:54 IST: Implemented 30-day local tracking, exact-title artwork fallback and private-key Android 9 helper recovery; built and installed the signed update. New permission and recovery activation checks remain pending.

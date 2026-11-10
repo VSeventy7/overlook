@@ -106,7 +106,7 @@ final class LocalAdb implements Closeable {
         write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putInt(AdbWire.word(command)).putInt(data.length).array()); write(data);
     }
     void startHelper() throws Exception {
-        open("shell,raw:chmod 400 /data/local/tmp/overlook-recents-helper.next.jar && mv -f /data/local/tmp/overlook-recents-helper.next.jar /data/local/tmp/overlook-recents-helper.jar && (umask 077; CLASSPATH=/data/local/tmp/overlook-recents-helper.jar nohup app_process /system/bin com.ansub.tvhome.RecentsHelper serve 0 >/data/local/tmp/overlook-recents-helper.log 2>&1 </dev/null & sleep 1)");
+        open("shell,raw:mv -f /data/local/tmp/overlook-recents-helper.next.jar /data/local/tmp/overlook-recents-helper.jar && chmod 400 /data/local/tmp/overlook-recents-helper.jar && (umask 077; CLASSPATH=/data/local/tmp/overlook-recents-helper.jar nohup app_process /system/bin com.ansub.tvhome.RecentsHelper serve 0 >/data/local/tmp/overlook-recents-helper.log 2>&1 </dev/null & sleep 1)");
         int total = 0;
         for (int i = 0; i < 32; i++) {
             AdbWire.Packet packet = AdbWire.receive(input);
