@@ -109,7 +109,7 @@ and the Overlook accessibility service.
 Starting with 1.6.8, **hold PatchWall** for a modern remote-friendly recent-apps panel. Each
 app has **Clear app**, and the header has **Clear all**. These remove recent tasks while keeping
 app data. A small ADB-started Android 9 helper drives the system's real dismissal controls;
-restart that helper after a TV reboot. See [recent-apps setup and controls](docs/recent-apps.md).
+version 1.7.0 can recover it automatically after private TV-key authorization. See [recent-apps setup and controls](docs/recent-apps.md) and [playback tracking and recovery](docs/playback-history.md).
 The short press still shows time/weather. See [the Mi TV setup](devices/legacy/mi-tv.md#patchwall-time-and-weather-overlay-23-october-2026)
 for the existing shortcut opt-in.
 
@@ -187,4 +187,9 @@ If the TV is stuck restarting, see [TV Detox's help](https://github.com/Ansub/tv
 
 MIT License, see [LICENSE](LICENSE).
 
-The **Refresh** button beside Continue watching reloads the TV’s shared viewing feed. It is available in v1 and v2.
+The **Refresh** button beside Continue watching reloads the TV’s shared viewing feed and optional local playback history. It is available in v1 and v2. See [playback tracking and artwork](docs/playback-history.md) for activation, privacy and service limitations.
+
+
+## Timeline
+
+- 2026-11-10 20:54 IST: Documented optional local playback history, matching artwork and TV-private helper recovery in 1.7.0.

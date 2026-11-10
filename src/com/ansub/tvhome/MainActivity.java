@@ -401,6 +401,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        HelperRecovery.start(this);
         // Rebuild only when apps were installed, removed or updated.
         if (dirty) {
             dirty = false;

@@ -2,7 +2,7 @@
 Project folder: overlook.
 Existing root documentation to inspect: `../DESIGN.md`, `../PRODUCT.md`, `../README.md`.
 
-Status: Awaiting user interview. The workflow below is the requested starter policy; project-specific choices and commands remain pending.
+Status: Current feature rules reconciled with the owner’s explicit scope, existing commands and shared Notion instructions. Future UI choices remain deferred by the owner.
 
 ## Before work
 
@@ -23,16 +23,21 @@ Status: Awaiting user interview. The workflow below is the requested starter pol
 
 ## Project commands
 
-Pending: inspect manifests and existing docs; confirm install, development, build, test and deployment commands. Do not invent scripts or run unreviewed installation commands.
+Observed commands on this Mac:
+
+- `JAVA_HOME=/opt/homebrew/opt/openjdk@21 sh build.sh`
+- `JAVA_HOME=/opt/homebrew/opt/openjdk@21 sh build-recents-helper.sh`
+- Android platform-tools ADB under the installed Android SDK; preserve the original signing certificate for update installs.
+- `sh -n` for changed shell scripts and `git diff --check`; add meaningful JVM/integration checks for new qualification and recovery logic.
+- Use the existing Personal Projects / Upcoming Tasks Notion board and feature branches/PRs targeting the repository's actual default branch. Never push directly to main.
+- Read-only device inspection and the authorized implementation/build work may continue. Ask before new TV settings grants, accepting a new debugging identity, package disabling/uninstallation, clearing app data or rebooting the TV. Existing consent is reusable for its actual scope.
+- Preserve both home layouts, app data, remote behavior and signing identity; show actual TV screenshots after installed changes. No fake personal history or claims of universal streaming support.
 
 ## Interview questions — ask only after the first three documents
 
-1. Which development/build/test commands and checks should be mandatory?
-2. Which Notion project/task workflow, branch policy, and review/merge conditions should apply?
-3. Which code conventions, documentation requirements, and existing instructions must be preserved?
-4. Which security boundaries and operations need explicit approval?
-5. Which unresolved decisions should block work, and which routine choices may Codex make?
+Current answers are established by the shared Notion instructions, existing verified workflow and this conversation. Routine Java implementation choices may follow the existing stack. New TV permissions are activation gates; deferred UI elements do not authorize a redesign. Ask about materially new product/security decisions when needed, without repeating settled approvals.
 
 ## Timeline
 
+- 2026-11-10 20:54 IST: Reconciled the current feature workflow with verified local commands, shared task/PR policy, and the owner’s TV permission, data-preservation and deferred-UI constraints.
 - 2026-11-01: Created project agent workflow and interview scaffold.

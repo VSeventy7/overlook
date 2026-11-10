@@ -24,7 +24,7 @@ adb -s TV_IP:5555 install -r out/tvhome.apk
 sh recents-helper.sh TV_IP
 ```
 
-Use JAVA_HOME for an installed JDK if the build cannot locate Java. The helper is separate from the APK and needs restarting after a TV reboot:
+Use JAVA_HOME for an installed JDK if the build cannot locate Java. Version 1.7.0 embeds the helper and supports optional private-key recovery on Android 9 after owner-approved TV authorization; see [activation and limits](playback-history.md). Without that activation, restart it manually after a TV reboot:
 
 ```sh
 sh recents-helper.sh TV_IP
@@ -48,3 +48,8 @@ References:
 - https://developer.android.com/reference/android/app/ActivityManager#getRecentTasks(int,%20int)
 - https://developer.android.com/reference/android/app/UiAutomation#FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES
 - https://github.com/RikkaApps/Shizuku
+
+
+## Timeline
+
+- 2026-11-10 20:54 IST: Added the optional automatic recovery path; retained manual recovery and existing validation evidence.

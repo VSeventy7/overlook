@@ -141,7 +141,11 @@ final class WatchNextShelf extends LinearLayout {
     }
 
     private void open(Item item) {
-        try { activity.startActivity(item.intent); }
+        try {
+            android.app.PendingIntent live = item.historyId == null ? null : PlaybackHistory.get(activity).target(item.historyId);
+            if (live != null) { try { live.send(); return; } catch (android.app.PendingIntent.CanceledException ignored) { } }
+            activity.startActivity(item.intent);
+        }
         catch (Exception e) { Toast.makeText(activity, "This title is unavailable. Open " + item.service + " below.", Toast.LENGTH_LONG).show(); }
     }
 
@@ -193,15 +197,10 @@ final class WatchNextShelf extends LinearLayout {
                 "android.permission.READ_TV_LISTINGS") != PackageManager.PERMISSION_GRANTED;
         message.setFocusable(needsPermission);
         message.setClickable(needsPermission);
-        if (needsPermission) {
-            message.setVisibility(View.VISIBLE);
-            cards.removeAllViews();
-            message.setText("Allow TV listings access to show Continue watching. Select here to allow.");
-            return;
-        }
         if (!observing && Build.VERSION.SDK_INT >= 26) {
             try {
-                activity.getContentResolver().registerContentObserver(FEED, true, observer);
+                activity.getContentResolver().registerContentObserver(PlaybackHistory.CHANGES, true, observer);
+                if (!needsPermission) activity.getContentResolver().registerContentObserver(FEED, true, observer);
                 observing = true;
             } catch (SecurityException ignored) { /* Refresh on Home remains available. */ }
         }
@@ -214,7 +213,9 @@ final class WatchNextShelf extends LinearLayout {
         new Thread(() -> {
             List<Item> items = new ArrayList<>();
             String error = null;
-            if (Build.VERSION.SDK_INT < 26) {
+            if (needsPermission) {
+                error = "Allow TV listings access to include the Android TV feed. Select here to allow.";
+            } else if (Build.VERSION.SDK_INT < 26) {
                 error = "Continue watching needs Android TV 8 or newer. Your apps are below.";
             } else {
                 String[] columns = {"package_name", "title", "intent_uri", "last_playback_position_millis",
@@ -270,7 +271,10 @@ final class WatchNextShelf extends LinearLayout {
                     error = "Continue watching is unavailable. Return Home to retry, or open an app below.";
                 }
             }
-            final String result = error;
+            mergeHistory(items);
+            java.util.Collections.sort(items, (a, b) -> Long.compare(b.engagement, a.engagement));
+            if (items.size() > 30) items.subList(30, items.size()).clear();
+            final String result = items.isEmpty() ? error : null;
             StringBuilder state = new StringBuilder();
             for (Item item : items) state.append(item.signature()).append('\n');
             final String nextSnapshot = state.toString();
@@ -285,7 +289,7 @@ final class WatchNextShelf extends LinearLayout {
                 setDescendantFocusability(FOCUS_BLOCK_DESCENDANTS);
                 cards.removeAllViews();
                 message.setText(result != null ? result : items.isEmpty()
-                        ? "No shared resume entries available. Only apps that publish viewing activity can appear."
+                        ? "No resume entries yet. Watch a video in an app that shares playback metadata."
                         : "From apps that share activity with Android TV. Some services may not appear.");
                 boolean populated = result == null && !items.isEmpty();
                 message.setVisibility(populated ? View.GONE : View.VISIBLE);
@@ -305,12 +309,41 @@ final class WatchNextShelf extends LinearLayout {
                 if (manualRefresh && !pendingRefresh) {
                     Toast.makeText(activity, result != null ? result : changed
                             ? "Continue watching updated · " + items.size() + " titles"
-                            : "No changes shared by streaming apps. Checked just now.", Toast.LENGTH_LONG).show();
+                            : "No new playback data available. Checked just now.", Toast.LENGTH_LONG).show();
                     manualRefresh = false;
                 }
                 if (pendingRefresh) { pendingRefresh = false; refresh(); }
             });
         }, "overlook-watch-next").start();
+    }
+
+    private void mergeHistory(List<Item> items) {
+        for (PlaybackHistory.Entry entry : PlaybackHistory.get(activity).records()) {
+            try {
+                Item nativeItem = null;
+                for (Item item : items) if (entry.pkg.equals(item.intent.getPackage())
+                        && PlaybackRules.normalize(entry.title).equals(PlaybackRules.normalize(item.title))) {
+                    nativeItem = item; break;
+                }
+                if (nativeItem != null) {
+                    if (nativeItem.thumbnail == null && nativeItem.poster == null) {
+                        nativeItem.thumbnail = entry.art; nativeItem.artSource = entry.artSource;
+                    }
+                    continue;
+                }
+                Intent intent = PlaybackLinks.view(activity, entry.pkg, entry.mediaUri);
+                boolean appOnly = intent == null;
+                if (appOnly) intent = activity.getPackageManager().getLeanbackLaunchIntentForPackage(entry.pkg);
+                if (intent == null) intent = activity.getPackageManager().getLaunchIntentForPackage(entry.pkg);
+                if (intent == null) continue;
+                String service = activity.getPackageManager().getApplicationLabel(
+                        activity.getPackageManager().getApplicationInfo(entry.pkg, 0)).toString();
+                Item item = new Item(entry.title, service + (appOnly ? " · Open app" : ""), intent,
+                        entry.position, entry.duration, 0, null, entry.art, "history:" + entry.id, entry.updated);
+                item.historyId = entry.id; item.artSource = entry.artSource;
+                items.add(item);
+            } catch (Exception ignored) { }
+        }
     }
 
     private static void count(Map<String, Integer> counts, String key) {
@@ -389,6 +422,14 @@ final class WatchNextShelf extends LinearLayout {
                     || (key == KeyEvent.KEYCODE_DPAD_RIGHT && cards.indexOfChild(v) == cards.getChildCount() - 1);
         });
         card.setOnClickListener(v -> open(item));
+        card.setOnLongClickListener(v -> {
+            new android.app.AlertDialog.Builder(activity).setTitle(item.title)
+                    .setMessage("Playback data: " + (item.historyId == null ? "Android TV Watch Next" : "Observed locally on this TV (30 days)")
+                            + "\nArtwork: " + ("JustWatch".equals(item.artSource) ? "JustWatch · justwatch.com" : "Provided by the app, or its icon")
+                            + "\nSome apps can only open their home screen. Exact resume depends on the app.")
+                    .setPositiveButton("OK", null).show();
+            return true;
+        });
         LayoutParams position = new LayoutParams(px(classic ? 340 : 376),
                 px(classic ? 260 : 280));
         position.rightMargin = px(22);
@@ -404,7 +445,8 @@ final class WatchNextShelf extends LinearLayout {
     }
 
     private static final class Item {
-        final String title, service, poster, thumbnail, id;
+        final String title, service, poster, id;
+        String thumbnail, historyId, artSource;
         final Intent intent;
         final long position, duration, engagement;
         final int type;

@@ -17,7 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/** ADB-started Android 9 adapter. No network port, shell execution, force-stop or data deletion. */
+/** ADB-started Android 9 adapter. No network listener, arbitrary shell execution, force-stop or data deletion. */
 public final class RecentsHelper {
     private static final String TOKEN = "com.ansub.tvhome.RECENTS_V1";
     private static final String APP = "com.ansub.tvhome";
@@ -26,6 +26,8 @@ public final class RecentsHelper {
     private final Class<?> api;
     private final int user;
     private static android.content.Context context;
+    private java.io.RandomAccessFile lockFile;
+    private java.nio.channels.FileLock instanceLock;
     private volatile boolean running = true;
     private volatile CountDownLatch appDied;
 
@@ -68,7 +70,28 @@ public final class RecentsHelper {
                 || "com.tailscale.ipn".equals(pkg) || "android".equals(pkg);
     }
 
+    private JSONObject playback() throws Exception {
+        // Fixed, read-only diagnostic command. No caller-supplied command or arguments.
+        Process process = Runtime.getRuntime().exec(new String[] {"/system/bin/dumpsys", "-t", "2", "media_session"});
+        try {
+            java.io.ByteArrayOutputStream bytes = new java.io.ByteArrayOutputStream();
+            try (java.io.InputStream input = process.getInputStream()) {
+                byte[] buffer = new byte[4096]; int read;
+                while ((read = input.read(buffer)) != -1) {
+                    if (bytes.size() + read > 128 * 1024) throw new IllegalStateException("Session dump too large");
+                    bytes.write(buffer, 0, read);
+                }
+            }
+            JSONArray sessions = new JSONArray();
+            for (PlaybackDump.Session session : PlaybackDump.parse(new String(bytes.toByteArray(), java.nio.charset.StandardCharsets.UTF_8)))
+                sessions.put(new JSONObject().put("package", session.pkg).put("title", session.title)
+                        .put("position", session.position).put("playing", session.playing));
+            return new JSONObject().put("sessions", sessions);
+        } finally { process.destroy(); }
+    }
+
     private synchronized JSONObject response(String command) throws Exception {
+        if ("PLAYBACK".equals(command)) return playback();
         int removed = 0, failed = 0;
         if (!"LIST".equals(command)) {
             String pkg = command.startsWith("CLEAR ") ? command.substring(6) : null;
@@ -191,6 +214,9 @@ public final class RecentsHelper {
     }
 
     private void serve() throws Exception {
+        lockFile = new java.io.RandomAccessFile("/data/local/tmp/overlook-recents-helper.lock", "rw");
+        instanceLock = lockFile.getChannel().tryLock();
+        if (instanceLock == null) return;
         boolean reported = false;
         while (running) {
             try {

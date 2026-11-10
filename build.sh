@@ -16,6 +16,11 @@ BT=$(ls -d "$SDK"/build-tools/* 2>/dev/null | sort -V | tail -1); JAR=$SDK/platf
 
 rm -rf out; mkdir -p out/classes out/dex out/gen/com/ansub/tvhome
 
+# Embed the existing Android 9 helper for private on-TV recovery.
+sh build-recents-helper.sh
+mkdir -p out/helper-assets
+cp out/recents-helper.jar out/helper-assets/recents-helper.jar
+
 # Turn the app list into Apps.java.
 {
   echo "package com.ansub.tvhome;"
@@ -25,7 +30,7 @@ rm -rf out; mkdir -p out/classes out/dex out/gen/com/ansub/tvhome
 } > out/gen/com/ansub/tvhome/Apps.java
 
 "$BT/aapt2" compile --dir res -o out/resources.zip
-"$BT/aapt2" link out/resources.zip -o out/base.apk -I "$JAR" --manifest AndroidManifest.xml -A assets --min-sdk-version 21 --target-sdk-version 34
+"$BT/aapt2" link out/resources.zip -o out/base.apk -I "$JAR" --manifest AndroidManifest.xml -A assets -A out/helper-assets --min-sdk-version 21 --target-sdk-version 34
 # shellcheck disable=SC2046 # javac and d8 want one argument per file, so the list is split on purpose
 javac -nowarn -Xlint:-options -encoding UTF-8 -source 1.8 -target 1.8 -bootclasspath "$JAR:$BT/core-lambda-stubs.jar" \
   -d out/classes $(find src out/gen -name "*.java")
