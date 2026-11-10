@@ -1,0 +1,347 @@
+{
+  "upstream": "https://github.com/Seagey/couch-tv",
+  "revision": "1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6",
+  "note": "Raster copies add source metadata only. Source code is retained separately from Overlook adaptations.",
+  "assets": {
+    "tv-home/web/backgrounds/scene-night-fg@2x.webp": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-night-fg@2x.webp",
+      "upstreamSha256": "4c510c190465177e05c3895c77ce9f2049f524802b131fa9241a8df7d1841084",
+      "shippingSha256": "4c510c190465177e05c3895c77ce9f2049f524802b131fa9241a8df7d1841084"
+    },
+    "tv-home/web/backgrounds/vang-vieng-sunset@2x.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/vang-vieng-sunset@2x.jpg",
+      "upstreamSha256": "0c78c6acc2b6cede87bedc816c5bb55374ffe28737735ff7e13e750d117e3496",
+      "shippingSha256": "71a860fbc8c6044de19e905a73c911f495db8a7df015bd29760261bfceb34346"
+    },
+    "tv-home/web/backgrounds/scene-fog-glass.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-fog-glass.jpg",
+      "upstreamSha256": "59b29acfb7cc8459cf25079c3505c23cab0ac0b65b7a74d07d09618293e81212",
+      "shippingSha256": "492bf820d310f10e619c09af7c2f4e4efe7ad2be6f7d95606197df61cb70770d"
+    },
+    "tv-home/web/backgrounds/scene-water-glass.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-water-glass.jpg",
+      "upstreamSha256": "57237dc604bd43dcab060b9a68ab8e8101401d34a194ecdc17579b2980c99918",
+      "shippingSha256": "187c651f5eb10dd4497a48cf23f8d94baaee19bcc1c16792fdd926a8b552ecca"
+    },
+    "tv-home/web/backgrounds/scene-water@2x.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-water@2x.jpg",
+      "upstreamSha256": "621fca94d91547fe675925cba1a23409daca0f0e9b34661ca68338b045952611",
+      "shippingSha256": "6a4b8356dad20a299df14673154e05290b14156ca09b0bdeeb113e97f8388d77"
+    },
+    "tv-home/web/backgrounds/vang-vieng-sunset.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/vang-vieng-sunset.jpg",
+      "upstreamSha256": "6956baaa37a9c0221312a40415857c96ed2cd6d881d43db93e20391955ade6d7",
+      "shippingSha256": "49a425f1a00a208f551c66abc293b9983df00e5517822566114b80287491751a"
+    },
+    "tv-home/web/backgrounds/scene-night-glass.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-night-glass.jpg",
+      "upstreamSha256": "4a852ba319a280e69f7cc69357c6dfc2ee33084bf86d8bbec5b080a390893ce0",
+      "shippingSha256": "3a28a9688e0721e035c629360ec3267f37bc794a0ecfcf1bae4fad6623799d75"
+    },
+    "tv-home/web/backgrounds/scene-golden@2x.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-golden@2x.jpg",
+      "upstreamSha256": "210b44a3de9173d48939b53e3e7b745562fd52f257c2913547bdfaa93f8d1e24",
+      "shippingSha256": "a8cd77b9ffa8c4cf1327c11826eb5a3cfa1e5b3c7949ea9b522351a9baf05b16"
+    },
+    "tv-home/web/backgrounds/albury-storm@2x.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/albury-storm@2x.jpg",
+      "upstreamSha256": "ff8cd491a4bed74b1e0e49e0aeb73f780ab7107b7b40a524280a96dc8975f16e",
+      "shippingSha256": "b78ff45968c98ddc2b3bcf7792012c70750bd2ec794625d940346fa461032602"
+    },
+    "tv-home/web/backgrounds/scene-fog.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-fog.jpg",
+      "upstreamSha256": "ed7950658a0eb1fc07618ecbb5d66bf3918e128b2b61fe23c2724918d00951fc",
+      "shippingSha256": "c23af69056695263c193454d87411a1513fbe9ec8c6d23e0e1d1a045b1943d13"
+    },
+    "tv-home/web/backgrounds/scene-fog-fg.webp": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-fog-fg.webp",
+      "upstreamSha256": "46f82bbf405f14afab0ded816703b5bb3d72d57ca8724b7ce826ad2ee2a07b36",
+      "shippingSha256": "46f82bbf405f14afab0ded816703b5bb3d72d57ca8724b7ce826ad2ee2a07b36"
+    },
+    "tv-home/web/backgrounds/albury-storm.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/albury-storm.jpg",
+      "upstreamSha256": "32a0fc371f8e72f500c0342271c0c30491e4409b3578e3dbe8d66ab3c2859474",
+      "shippingSha256": "d0b24eabada00c74c425d566c5282341a317273ea0317a997894835d44af1f6e"
+    },
+    "tv-home/web/backgrounds/scene-night-fg.webp": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-night-fg.webp",
+      "upstreamSha256": "034b3525f3f405c1458304932aec05ffc9791782fdbc76b5592b60173556ae8e",
+      "shippingSha256": "034b3525f3f405c1458304932aec05ffc9791782fdbc76b5592b60173556ae8e"
+    },
+    "tv-home/web/backgrounds/scene-golden-fg.webp": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-golden-fg.webp",
+      "upstreamSha256": "434b0b260d78769e51f5254dbbdb488e4eb03d27ea65c074cbf13acb1f672b02",
+      "shippingSha256": "434b0b260d78769e51f5254dbbdb488e4eb03d27ea65c074cbf13acb1f672b02"
+    },
+    "tv-home/web/backgrounds/scene-fog@2x.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-fog@2x.jpg",
+      "upstreamSha256": "250926204bf3d6789b002cfb8bb514109db95019ca9e76291d2e13054dc5f8ec",
+      "shippingSha256": "f401bd96641085515d22dbf133352ea9a78863b68fbd06cd2adf844949fec621"
+    },
+    "tv-home/web/backgrounds/scene-golden-fg@2x.webp": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-golden-fg@2x.webp",
+      "upstreamSha256": "13f77ea7e2f348979df80d86c54e0b3404ff5bfa33bc035f58da1cb521448b34",
+      "shippingSha256": "13f77ea7e2f348979df80d86c54e0b3404ff5bfa33bc035f58da1cb521448b34"
+    },
+    "tv-home/web/backgrounds/tessellated-pavement@2x.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/tessellated-pavement@2x.jpg",
+      "upstreamSha256": "90b1d55a30ee2e1ae17c8a616d8a08d5016a607c37dd62cb384342f53ff0be23",
+      "shippingSha256": "76d1850b516ca3217da527d111b8c94cfb736507dac958a82d303ca68c6392b4"
+    },
+    "tv-home/web/backgrounds/tessellated-pavement.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/tessellated-pavement.jpg",
+      "upstreamSha256": "02ca6ec77d6358d64a1f596f75337e45acd73d163199cbf5d6023cc035a245d6",
+      "shippingSha256": "de8baafed1364ca9169c60dc710d2e68242eace5a82cd70033c07cd731ca0024"
+    },
+    "tv-home/web/backgrounds/scene-night@2x.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-night@2x.jpg",
+      "upstreamSha256": "5916d70c2078d9e28fcfe3778bdb95cf492a2fd9dd174eb774800a5a1c49abf7",
+      "shippingSha256": "c4b5b252625371ae0e7386e4ebb4e04ca5f0531c1cb07ff6d595ef7e95065f63"
+    },
+    "tv-home/web/backgrounds/scene-fog-fg@2x.webp": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-fog-fg@2x.webp",
+      "upstreamSha256": "d2897640ce64c47ba44facfdd6e4f889ff2154599169086611bffc61565efefe",
+      "shippingSha256": "d2897640ce64c47ba44facfdd6e4f889ff2154599169086611bffc61565efefe"
+    },
+    "tv-home/web/backgrounds/grose-valley.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/grose-valley.jpg",
+      "upstreamSha256": "35d3190b0284d6df8416b9d407e9b585a91c8f904b58c09a728cb36318a4f7d3",
+      "shippingSha256": "7508185bf59e84187520f7c9cffc785932fcf7e6dbfb5bef6005a6b46e668063"
+    },
+    "tv-home/web/backgrounds/scene-golden-glass.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-golden-glass.jpg",
+      "upstreamSha256": "86de4a3c74532d34b61e7e487604d4b67d90650fe063954c74bd627c20b92cb5",
+      "shippingSha256": "118f2d3c79ad4d1c2ea878579df436c97551c971753af89c6b138966a59baa96"
+    },
+    "tv-home/web/backgrounds/aresquiers-beach@2x.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/aresquiers-beach@2x.jpg",
+      "upstreamSha256": "f332452d3ddd62c74e14b92a6e9f62167bebc9ef112ea7fc2f4ef3d57cc58880",
+      "shippingSha256": "abbc5cfd25e2ca2bcf1098a6a82e939544ec78488f7a1f1c7e22fe81315b3df0"
+    },
+    "tv-home/web/backgrounds/scene-water.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-water.jpg",
+      "upstreamSha256": "087b639e30b3aa1ced9a6d357c1ae56bd8ad1042559e0234657eccb00a95472a",
+      "shippingSha256": "eabd0673ee50fd4f45718a52587f2b93d5e7c70be9b455599847f9db1d2721fd"
+    },
+    "tv-home/web/backgrounds/scene-dawn-fg@2x.webp": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-dawn-fg@2x.webp",
+      "upstreamSha256": "106dbda6da3265336385c49151100ab67cf4eb692c142a2b17e9e0dc38c6aaf7",
+      "shippingSha256": "106dbda6da3265336385c49151100ab67cf4eb692c142a2b17e9e0dc38c6aaf7"
+    },
+    "tv-home/web/backgrounds/scene-golden.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-golden.jpg",
+      "upstreamSha256": "c134080d8fb9ab0a3b20a3a6aefcd73f6e6fb7a94108c409bf079a2991c50035",
+      "shippingSha256": "b59d68256313a939793cfe0db527f6ca6a507afbec6a8edcc494ed036e0679d5"
+    },
+    "tv-home/web/backgrounds/scene-dawn.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-dawn.jpg",
+      "upstreamSha256": "2ae089d4d1af213c1ce3434c06fd3e75947f9656eb43138347b5549216ca5dc3",
+      "shippingSha256": "ae54e8d52e0f173b5996db81de863f448abe3494d861c72b3c0ff2ceecd5e53b"
+    },
+    "tv-home/web/backgrounds/aresquiers-beach.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/aresquiers-beach.jpg",
+      "upstreamSha256": "cb88119174258820fc250dbf7f24c445427a1784e4a1b82882dabedd79255d03",
+      "shippingSha256": "dc630b559bebc92a97715ed1dc6025f58dc7f995b0517df2c666f8d1517fd55f"
+    },
+    "tv-home/web/backgrounds/scene-dawn-fg.webp": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-dawn-fg.webp",
+      "upstreamSha256": "3e2a8a6371199ef749c9842c91378d7c54dc47a67e2590334a5d7ff1a0288ae6",
+      "shippingSha256": "3e2a8a6371199ef749c9842c91378d7c54dc47a67e2590334a5d7ff1a0288ae6"
+    },
+    "tv-home/web/backgrounds/scene-night.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-night.jpg",
+      "upstreamSha256": "0a896b2ba859f7310b0f7cf6d1304d444f27223b7255f09d7949313e11e866a5",
+      "shippingSha256": "abe961e60b1b835e82b8bd71677bc7baf94481eff8ffed74d5c88d06b67a47b2"
+    },
+    "tv-home/web/backgrounds/scene-dawn-glass.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-dawn-glass.jpg",
+      "upstreamSha256": "862e9df16e41ac95e6a9f8bda40dd0de3a514c5ceb9a21e1a9fb248d39dc1471",
+      "shippingSha256": "b90d1d391cf279b8d4f4fad1ac5a669ee749de0d947a516b454521aa948c8e0d"
+    },
+    "tv-home/web/backgrounds/scene-dawn@2x.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/scene-dawn@2x.jpg",
+      "upstreamSha256": "aa35b47609f2fc11727db2097d55a565fdaef6093b794840eb52ee6ddf94dda5",
+      "shippingSha256": "b1dd3bc63c0a647200bcd9af685d7c4932972291815012294d14f976be920855"
+    },
+    "tv-home/web/backgrounds/grose-valley@2x.jpg": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/tv-home/web/backgrounds/grose-valley@2x.jpg",
+      "upstreamSha256": "d0004a2033a17faedefc2f5bf86e013eb458cabf3584311e3028cb7138bd5d44",
+      "shippingSha256": "cb585994dc8c90deef05a91510832f1637a079112d3082063a8d9af7cb547959"
+    },
+    "remote/src/app-logos/com.swm.live.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.swm.live.png",
+      "upstreamSha256": "67a5e1a864133bd6acf566e03fdccc2ea0654e70d3e9fa0579e8d17fdbdfde3c",
+      "shippingSha256": "6a1a88f13ac957bb8e55b12ff8053c8de694216657e0b0d05e343ee621d8e0c8"
+    },
+    "remote/src/app-logos/com.disney.disneyplus.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.disney.disneyplus.png",
+      "upstreamSha256": "076e2ea8e71a352fe10a8242db3b408ac133309bec59612d402932b117c596ae",
+      "shippingSha256": "5bf613ef2f39d0e8a94fcbb7a151bdfde0345ae385e016829b23cbd4547ba62e"
+    },
+    "remote/src/app-logos/au.com.tenplay.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/au.com.tenplay.png",
+      "upstreamSha256": "37c2760b0aeb2a422af56020bfbae71c633c5359fd14e636302068cc12e5e298",
+      "shippingSha256": "6cd72ea370bb66b9e2ebf281d3efd816f5fe13eb98a9314afde1dce65bfb119a"
+    },
+    "remote/src/app-logos/au.com.foxtel.atv.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/au.com.foxtel.atv.png",
+      "upstreamSha256": "d2b64f1f9c35a5507462b7629cc7fe45b397a313ac7d1cc3dbbd5ef4912c5893",
+      "shippingSha256": "eb5c94e70a66d55dcc476b2bd05da9b5a3569697c4b150ba742b4ab9f5c4daec"
+    },
+    "remote/src/app-logos/com.apple.atve.androidtv.appletv.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.apple.atve.androidtv.appletv.png",
+      "upstreamSha256": "eb27bc27682d76e535f63840435d311bdd1a7816eaf1631f3052a31e85c0c039",
+      "shippingSha256": "1724cf78f9d80eb795f2717df40393567cabd8da0888b0e12fa827bb615cb98c"
+    },
+    "remote/src/app-logos/com.amazon.amazonvideo.livingroom.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.amazon.amazonvideo.livingroom.png",
+      "upstreamSha256": "0531aebff24bb34f968a06657bf2c81ae0c457d292d184eb258e08fd6dff73c8",
+      "shippingSha256": "0e8157c6c3511992c79c1a7ee373d02b6bc2ba3b156e1ddea35535cdcc8fb0f6"
+    },
+    "remote/src/app-logos/com.sbs.ondemand.tv.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.sbs.ondemand.tv.png",
+      "upstreamSha256": "804a8d5ac619eba5ba708a697228bfe844514b68663ab0cad5b700274d5ede67",
+      "shippingSha256": "161d2f70f041ffbce1eb62eb988fcb282ce6dbc6b1d6cb00c470cb58f61aa6ec"
+    },
+    "remote/src/app-logos/com.atlas.tv.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.atlas.tv.png",
+      "upstreamSha256": "ea7ee8eb4236b330b302107dd39b147802dce34448ccdf42af579a7e4633cd39",
+      "shippingSha256": "508bf434fe33e40b7b2d3ed0f793821f97d2d722a1ce8455a9d6ec9ae99d5083"
+    },
+    "remote/src/app-logos/com.spotify.tv.android.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.spotify.tv.android.png",
+      "upstreamSha256": "0d46bba63b3425ef5af9ee354d4c2ede6333a1da6da91bb75fb84439c0ef2866",
+      "shippingSha256": "20e33d97c1b679e6fa5720934f7b0c02005651e02b455611733dab6c651832b7"
+    },
+    "remote/src/app-logos/com.crunchyroll.webapp.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.crunchyroll.webapp.png",
+      "upstreamSha256": "9c6cb5f4fee5f27f224974debffcf51f7107a502836091115586c01c5d1de3e1",
+      "shippingSha256": "8e8a86bb3e30084fc8f214894f9c2da21ff974b350fc21c8e33626db39026a78"
+    },
+    "remote/src/app-logos/com.google.android.youtube.tv.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.google.android.youtube.tv.png",
+      "upstreamSha256": "a450354deaee5df9d762413ccf81b8d92974547aa0d387a7e2663492c1c25d4d",
+      "shippingSha256": "2e836f622b23dd98866cd9d331d089ef8bbeb53d5952d50aeb0b3e9fb012190e"
+    },
+    "remote/src/app-logos/com.wbd.stream.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.wbd.stream.png",
+      "upstreamSha256": "2d85f268c1d0825f92c4a3b61936c84363a80d3711bca5895ef4c31763e823b3",
+      "shippingSha256": "40cc8b7034902dde87622dc0850e702bb6f4480b740a1e56c3520e00b86a34ba"
+    },
+    "remote/src/app-logos/au.net.abc.iview.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/au.net.abc.iview.png",
+      "upstreamSha256": "475e95d8e6197cfd9415f493b18aed204ccbf65c38657d8e7be9af6150b2739f",
+      "shippingSha256": "f8dce4bfc8d24746c3f0f63285602bf057d5be77db62762544272f7bec16b525"
+    },
+    "remote/src/app-logos/com.cbs.ca.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.cbs.ca.png",
+      "upstreamSha256": "ca953e3c571f299687dceb115328f13a3df74555d8ad80d24332bd94c75ec851",
+      "shippingSha256": "5c9785c8f47533de57683628060a4f5235f16ceb59e91ade5cb271a3b2a03af7"
+    },
+    "remote/src/app-logos/au.com.kayosports.tv.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/au.com.kayosports.tv.png",
+      "upstreamSha256": "2241bb0cca5e2f296788f7872db6fda84b115eca130473952c37766949bc0ee2",
+      "shippingSha256": "14b1ff291340ab5155d2313972c7743eac84f4bda32cde77d846ee7b9417aed3"
+    },
+    "remote/src/app-logos/it.rainet.raiplay.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/it.rainet.raiplay.png",
+      "upstreamSha256": "fe97e125417f048bcf8c484d2d1871d8b90278ffe0355b3ec92dc4806606a0e2",
+      "shippingSha256": "f4faddb50699af9c683aac9d2ebf162a04cd83e6a9560887282d78d35aee87e5"
+    },
+    "remote/src/app-logos/tv.twitch.android.app.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/tv.twitch.android.app.png",
+      "upstreamSha256": "d6f0a0e570113126c4c16cbdacab67a104e532f720e0a875979f07142623b457",
+      "shippingSha256": "9a5045e6c6227de0be2a5ce052659cd2e623eca824866c8fc49a5c4533c4f75c"
+    },
+    "remote/src/app-logos/dazn.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/dazn.png",
+      "upstreamSha256": "090b070436b80f3e96e4621ba6f2c211dc3e2b4cf36bf8ae2daa93a8d2937ada",
+      "shippingSha256": "9cceaf958fa276e4986c0e8a719021ee35807d5f942f09d4f500ade1d1ca33c9"
+    },
+    "remote/src/app-logos/au.com.ninenow.ctv.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/au.com.ninenow.ctv.png",
+      "upstreamSha256": "0a5e3e9e6db3f64cd31e09e6978eb8e8e8383d95bbc71edeb9dd2daa0ba92076",
+      "shippingSha256": "d4fa1d6e404e3e8914dfe7f7a818fa06a8ba0853452198e0c116ca9c9b4bf574"
+    },
+    "remote/src/app-logos/au.com.stan.and.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/au.com.stan.and.png",
+      "upstreamSha256": "c33938a7cc51a31e40272bb93ad6e8a89a54046b90064e40ef4776fd0db9375a",
+      "shippingSha256": "4318421d214ee43ebd2fe73c8ebf24327c669288e9ed632203e853c6e637a6e7"
+    },
+    "remote/src/app-logos/com.amazon.firetv.youtube.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.amazon.firetv.youtube.png",
+      "upstreamSha256": "93f6965a3af6aabe8a57e10207459859756ea120ca008300ae622ba03782f9fc",
+      "shippingSha256": "f6fc245518271eccfe3cd6b9cdcdc341eb2ff44d4a1228a5f7a49641f89bfade"
+    },
+    "remote/src/app-logos/au.com.streamotion.ares.tv.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/au.com.streamotion.ares.tv.png",
+      "upstreamSha256": "748f8f2d344e98cc71f89ac0477f3614aca7b69a4110f9590baf4066752681ed",
+      "shippingSha256": "94ccdeda6b975e67d446855a27a29ea078c1a3f7cc20d2abd0e1e6d0e3442cfb"
+    },
+    "remote/src/app-logos/com.netflix.ninja.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/src/app-logos/com.netflix.ninja.png",
+      "upstreamSha256": "8fdf7146407cef397d2173309045a73356dc85e4b9b19b72e148688a33bd79e1",
+      "shippingSha256": "0b086e3ccc21323f77542ff61816c19b53ae874feb6387abc30b2245a590b200"
+    },
+    "remote/public/splash/1320x2868.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/splash/1320x2868.png",
+      "upstreamSha256": "039698678121feac82a38ce595fe6b52dbcdf12f95551e9906b1e2dfcd9408eb",
+      "shippingSha256": "f0bacbc70083ce6618213a8fa1e668e3f7cd226fdb2c6e4e7424ba4cf92b5de9"
+    },
+    "remote/public/splash/1398x2034.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/splash/1398x2034.png",
+      "upstreamSha256": "875b11f1addf94f7ec18bbd16a323768504b538c6012baca98643bebf1c9f163",
+      "shippingSha256": "75da8864c429b13868f25d8c784fddefe4fe10ee2bc92cfd1b3e990f6435f212"
+    },
+    "remote/public/splash/1290x2796.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/splash/1290x2796.png",
+      "upstreamSha256": "19af32a4d43375ea514d81b8a3f933bfa0f95c57d11ace1c837aff0061d2d43d",
+      "shippingSha256": "88b6d516280ddd109ba6377e13a4570eb5bfe1164edf9784eda13af976c6d75f"
+    },
+    "remote/public/splash/2670x1878.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/splash/2670x1878.png",
+      "upstreamSha256": "17f84932ea3eab3a806f1e3560e2f7f250b2a7badda2c567e20616064ec96421",
+      "shippingSha256": "55c0c950997abe46994fcf4908ba6219df3ad003b8bf6b94f1f5f12357b17d16"
+    },
+    "remote/public/splash/750x1334.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/splash/750x1334.png",
+      "upstreamSha256": "575fc0fceb187e2226bed10388df0a1028416c1c9b95f21142f66eec2d7fd0f8",
+      "shippingSha256": "e2208dc3d4ebf04f6795217a63f50d19e02136b3e1893d401aba03f82ddd993e"
+    },
+    "remote/public/splash/1170x2532.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/splash/1170x2532.png",
+      "upstreamSha256": "2dd6f3607ebcb7161d3d5a0ec8f3a2df06e6136d5e75ca7e6e25da549f0c66df",
+      "shippingSha256": "047da0fa2627e7a725b21a195c2e6a6b640b2a50120a841fd525ee04d055229b"
+    },
+    "remote/public/splash/1878x2670.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/splash/1878x2670.png",
+      "upstreamSha256": "b107afb5c8b7cae0ecefeff4d067c2f1e3df0407d3db5a62f76d22f930bcb390",
+      "shippingSha256": "ecb6acdb2d2ed9d0f5831ffef1a38dba68c7c5d649bd3078c1028a79d4525a4c"
+    },
+    "remote/public/splash/1179x2556.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/splash/1179x2556.png",
+      "upstreamSha256": "0f721a800828cd7398b029e07868ae8aa002d95035a8e3b72ec3d444a241070e",
+      "shippingSha256": "96e9e70ec0e1807127865b157d182a8716efc6b042c6cdb09e3d53e0f10bd437"
+    },
+    "remote/public/splash/1206x2622.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/splash/1206x2622.png",
+      "upstreamSha256": "706e11f45809790dd9b94f88d1b29915cf95a0e583f40b610ac2ca7986260f50",
+      "shippingSha256": "ce4aca98f1a217abe5d231fb51cfd1ff53c00ca28c5f61edaee392fa688941e0"
+    },
+    "remote/public/icons/apple-touch-icon.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/icons/apple-touch-icon.png",
+      "upstreamSha256": "60656b4055cee9c8e5a745441bad62c28088fb4299ad1c685936d42444be794d",
+      "shippingSha256": "8f9f4f4490a32216e839544564e4d51d494070cf249cf8b6f924b0e3cdb2086d"
+    },
+    "remote/public/icons/icon-192.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/icons/icon-192.png",
+      "upstreamSha256": "74f6292e96ab4444030720090cc845b13ba3b8d80b0850d907ad8bf4abe1bed4",
+      "shippingSha256": "43ce1971aea8e566a0112eed6d856e68e09a2aecf70918a3bdd80e1e1c011992"
+    },
+    "remote/public/icons/icon-512.png": {
+      "source": "https://github.com/Seagey/couch-tv/blob/1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6/remote/public/icons/icon-512.png",
+      "upstreamSha256": "81b58adf95bac29e7121db2c1798b59a7dcc9d0eb695d9b252c14d55f6d94ca9",
+      "shippingSha256": "bba433100c6a3bde8ca3f6f8c690442f90b33a173d7d337023079a2d214262f1"
+    }
+  }
+}

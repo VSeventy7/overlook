@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-28T00:00:00Z",
-  "title": "Design System: Overlook v2 Scenic dock",
+  "generatedAt": "2026-11-10T23:01:45.814804+05:30",
+  "title": "Design System: Overlook v3 Couch TV; retained v1/v2",
   "extensions": {
     "motion": [
       {
@@ -35,6 +35,32 @@
         "{colors.wallpaper-bottom}"
       ],
       "purpose": "Darkens scenic wallpaper toward the bottom, over the existing shade."
+    },
+    "legacyV2": {
+      "scope": "Existing unprefixed tokens, components, motion and narrative remain retained v2 guidance. Historical pending evidence is preserved below; current v3 evidence is separate."
+    },
+    "v3": {
+      "source": "vendor/couch-tv/tv-home/web/app.css",
+      "compatibility": "v3/web/overlook.css",
+      "upstreamCommit": "1dbdcf195ad6ecb2e5e75337ee63cf6d263b88b6",
+      "scaling": "html font-size: calc(100vw / 120); 16px/rem at 1920px",
+      "wallpaperScrim": "linear-gradient(180deg,rgba(0,0,0,.22),transparent 24%,rgba(0,0,0,.38) 52%,rgba(0,0,0,.94) 100%)",
+      "motion": {
+        "ease": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "quickFocus": "200ms; scale(1.08)",
+        "resumeFocus": "240ms; scale(1.05); Glass: scale(1.03) translateY(-0.25rem)",
+        "reducedMotion": "Overlook override: .001ms animation and transition durations"
+      },
+      "shadows": {
+        "resumeFocus": "0 0 0 0.1875rem #fff, 0 1.25rem 2.5rem rgba(0, 0, 0, 0.45)",
+        "quickFocus": "0 0.5rem 1.25rem rgba(0, 0, 0, 0.35)"
+      },
+      "evidence": {
+        "verdict": "SHIP",
+        "scope": "Reviewed Mi TV API28/WebView138 landscape presentation/discovery; gradient and wallpaper preservation resolved. Signed 1.8.0/code29 installed; v3\u2192v1\u2192v2\u2192v3 checked.",
+        "privacy": "Actual TV screenshots remain outside Git; do not publish owner viewing data."
+      },
+      "provenance": "All68 TV/remote rasters embed origins; v3/licenses/asset-provenance.json carries upstream/shipping hashes; MIT/OFL/photo CC notices bundled."
     }
   },
   "components": [
@@ -45,6 +71,36 @@
       "description": "Preview of native focus geometry; artwork is intentionally omitted to avoid user viewing data.",
       "html": "<div class=\"ds-card\" tabindex=\"0\"><div class=\"ds-art\"></div><div class=\"ds-service\">Provider</div><strong>Title</strong><div class=\"ds-detail\">Resume</div></div>",
       "css": ".ds-card{width:376px;height:332px;padding:7px 9px;color:#fff;background:transparent;border:4px solid transparent;border-radius:16px;font:24px sans-serif;transition:transform 180ms}.ds-art{height:198px;background:#20232B;border-radius:16px}.ds-service{font-size:18px;padding-top:5px}.ds-detail{font-size:18px}.ds-card:hover,.ds-card:focus-visible{background:rgba(42,48,61,.098);border-color:#fff;transform:scale(1.035);outline:none}@media(prefers-reduced-motion:reduce){.ds-card{transition:none}}"
+    },
+    {
+      "name": "V3 Quick control",
+      "kind": "button",
+      "description": "V3 upstream geometry preview; neutral placeholders avoid owner data.",
+      "html": "<button class=\"ds-v3-quick\">Controls</button>",
+      "css": ".ds-v3-quick{font-family:Inter,system-ui,sans-serif;transition:transform 200ms cubic-bezier(.2,.8,.2,1),background 200ms;background:rgba(30,20,28,.32);color:#fff;border:0;border-radius:2.75rem;min-height:5.5rem;padding:0 1.75rem;font-size:1.4375rem;font-weight:600}.ds-v3-quick:hover,.ds-v3-quick:focus-visible{background:#fff;color:#111;transform:scale(1.08);outline:none}@media(prefers-reduced-motion:reduce){button{transition:none!important;transform:none!important}}",
+      "refersTo": "v3-quick-control"
+    },
+    {
+      "name": "V3 Resume card",
+      "kind": "card",
+      "description": "V3 upstream geometry preview; neutral placeholders avoid owner data.",
+      "html": "<button class=\"ds-v3-card\"><span class=\"ds-v3-thumb\"></span><span>Provider<br><strong>Available title</strong></span></button>",
+      "css": ".ds-v3-card{font-family:Inter,system-ui,sans-serif;transition:transform 200ms cubic-bezier(.2,.8,.2,1),background 200ms;display:flex;align-items:center;gap:1.25rem;width:32.5rem;padding:1rem;border:0;border-radius:1.875rem;background:rgba(30,20,28,.32);color:#f5f5f7;text-align:left;font-size:1.1875rem}.ds-v3-thumb{display:block;flex:none;width:10.5rem;height:5.9375rem;background:#1c1c21;border-radius:1rem}.ds-v3-card strong{display:block;font-size:1.8125rem;font-weight:600}.ds-v3-card:hover,.ds-v3-card:focus-visible{transform:scale(1.05);box-shadow:0 0 0 .1875rem #fff,0 1.25rem 2.5rem rgba(0,0,0,.45);outline:none}@media(prefers-reduced-motion:reduce){button{transition:none!important;transform:none!important}}",
+      "refersTo": "v3-resume-card"
+    },
+    {
+      "name": "V3 Settings row",
+      "kind": "button",
+      "description": "V3 upstream geometry preview; neutral placeholders avoid owner data.",
+      "html": "<button class=\"ds-v3-setting\"><strong>Clock style</strong><span>Glass</span></button>",
+      "css": ".ds-v3-setting{font-family:Inter,system-ui,sans-serif;transition:transform 200ms cubic-bezier(.2,.8,.2,1),background 200ms;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;min-height:4.75rem;width:34rem;padding:.75rem 1.75rem;border:0;border-radius:1.5rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.92);font-size:1.75rem}.ds-v3-setting span{opacity:.62}.ds-v3-setting:hover,.ds-v3-setting:focus-visible{background:#fff;color:#111;transform:scale(1.02);outline:none}@media(prefers-reduced-motion:reduce){button{transition:none!important;transform:none!important}}"
+    },
+    {
+      "name": "V3 Dock app",
+      "kind": "button",
+      "description": "V3 upstream geometry preview; neutral placeholders avoid owner data.",
+      "html": "<button class=\"ds-v3-app\">App</button>",
+      "css": ".ds-v3-app{font-family:Inter,system-ui,sans-serif;transition:transform 200ms cubic-bezier(.2,.8,.2,1),background 200ms;width:7rem;height:7rem;border:0;border-radius:22.5%;background:#2a2a30;color:#f5f5f7;font-size:1.125rem}.ds-v3-app:hover,.ds-v3-app:focus-visible{transform:scale(1.16) translateY(-.625rem);box-shadow:0 0 0 .25rem #fff,0 1.125rem 2.5rem rgba(0,0,0,.4);outline:none}@media(prefers-reduced-motion:reduce){button{transition:none!important;transform:none!important}}"
     }
   ],
   "narrative": {
@@ -64,6 +120,19 @@
       "Don't add visible Overlook branding to v2 home.",
       "Don't restore the removed cinematic hero or artwork-first layout.",
       "Don't invent viewing history for providers without readable entries."
-    ]
+    ],
+    "v3": {
+      "northStar": "Couch TV Night scenes",
+      "overview": "Owner-selected actual upstream web surface with scenic glass clock, landscape resume content, compact dock and full-screen settings. V3 is default once; native v1/v2 remain available.",
+      "dos": [
+        "Preserve custom clock/date, wallpapers, app order/folders, settings shortcuts, Refresh and PatchWall actions.",
+        "Keep the upstream stylesheet authoritative.",
+        "Keep server loopback unless owner explicitly enables paired phone LAN access."
+      ],
+      "donts": [
+        "Do not fabricate provider history or claim universal streaming support.",
+        "Do not apply v3 tokens to v1/v2."
+      ]
+    }
   }
 }

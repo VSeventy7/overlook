@@ -1,0 +1,12 @@
+/* Overlook compatibility additions. Couch TV's visual system remains authoritative for v3. */
+.scrim, .theme-night .scrim, .theme-oled .scrim {
+  background: linear-gradient(180deg,rgba(0,0,0,.22),transparent 24%,rgba(0,0,0,.38) 52%,rgba(0,0,0,.94) 100%);
+}
+#q-overlook_version { font-weight: 650; }
+#q-overlook_version svg { display: none; }
+.qbtn[aria-label] { min-height: 2.75rem; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+#q-overlook_version span { display: inline !important; font-size: 1.1rem; }

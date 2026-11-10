@@ -1,0 +1,3 @@
+
+# Preserve upstream formatting/CRLF in the attributed vendor snapshot.
+vendor/couch-tv/** -whitespace

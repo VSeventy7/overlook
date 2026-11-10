@@ -1,6 +1,6 @@
 # v2 · Scenic dock
 
-**Current release 1.6.1:** Scenic dock is the only v2 layout. The version menu lists v2 Scenic dock before v1 Classic. Prior Cinematic/Artwork selections automatically render Scenic dock; no preference reset is needed. Clock, date, controls, resume cards and app tiles are about 10% smaller than 1.6.0. A wallpaper-only vertical gradient increases darkness toward the bottom. V1 keeps its existing dimensions and wallpaper treatment.
+**Native v2 (retained in 1.8.0):** Scenic dock is the only v2 layout. The current version menu lists v3 Couch TV first, followed by v2 Scenic dock and v1 Classic. Prior Cinematic/Artwork selections automatically render Scenic dock; no preference reset is needed. Clock, date, controls, resume cards and app tiles are about 10% smaller than 1.6.0. A wallpaper-only vertical gradient increases darkness toward the bottom. V1 keeps its existing dimensions and wallpaper treatment.
 
 Adds a horizontal Continue watching shelf above the original app row. Resume cards show real provider thumbnails (with poster-art and app-icon fallbacks), title, streaming app and available playback position. Select a card to open its owning app's deep link. Use Up from the first app row to reach the shelf, Up again for the version control, and Down to return to apps. Down from the top-right controls enters the shelf when cards are available.
 
@@ -65,3 +65,7 @@ V1 gains the same Watch Next source in a compact row, preserving classic styling
 ### 1.6.4
 
 The shared Continue watching header now includes Refresh. Up from a card reaches Refresh; Up again reaches top controls. Manual refresh rereads the TV provider, keeps cards during loading and restores button focus.
+
+## Timeline
+
+- 2026-11-10 23:02 IST: Retained native Scenic v2 and clarified the newer default v3; historical validation below remains unchanged.

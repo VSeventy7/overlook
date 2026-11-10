@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ansub.tvhome" android:versionCode="27" android:versionName="1.6.8">
+    android:versionCode="29" android:versionName="1.8.0">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
     <!-- Optional Watch Next feed; some firmware restricts this to the system launcher. -->
     <uses-permission android:name="android.permission.READ_TV_LISTINGS" />
@@ -39,8 +42,19 @@
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
     <uses-feature android:name="android.software.leanback" android:required="false" />
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-    <application android:label="Home" android:allowBackup="false"
+    <application android:name="dev.couchtv.ontv.App" android:usesCleartextTraffic="true" android:label="Home" android:allowBackup="false"
         android:theme="@android:style/Theme.Material.NoActionBar.Fullscreen">
+        <activity android:name="dev.couchtv.ontv.HomeActivity" android:exported="false"
+            android:launchMode="singleTask" android:excludeFromRecents="true" android:screenOrientation="landscape"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout|uiMode|locale" />
+        <activity android:name="dev.couchtv.ontv.SetupActivity" android:exported="false"
+            android:launchMode="singleTask" android:screenOrientation="landscape" />
+        <service android:name="dev.couchtv.ontv.BridgeService" android:exported="false" android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="On-device launcher data and optional paired phone remote" />
+        </service>
+        <receiver android:name="dev.couchtv.ontv.BootReceiver" android:exported="false">
+            <intent-filter><action android:name="android.intent.action.BOOT_COMPLETED" /><action android:name="android.intent.action.MY_PACKAGE_REPLACED" /></intent-filter>
+        </receiver>
         <service android:name=".InfoOverlayService"
             android:label="Overlook info overlay"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
@@ -49,6 +63,10 @@
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
             <meta-data android:name="android.accessibilityservice" android:resource="@xml/info_overlay" />
+        </service>
+        <service android:name=".PlaybackTracker" android:label="Overlook playback history"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:exported="true">
+            <intent-filter><action android:name="android.service.notification.NotificationListenerService" /></intent-filter>
         </service>
         <!-- Shell-only attachment of the optional recent-task helper. -->
         <provider android:name=".RecentAppsProvider" android:authorities="com.ansub.tvhome.recents"

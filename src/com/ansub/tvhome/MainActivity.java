@@ -143,6 +143,7 @@ public class MainActivity extends Activity {
     private String lastGridKey;  // the tile Down goes back to from the top right
     private int tileW, tileH, gridTop, gridLeft; // app grid geometry, set by buildTiles
     private final List<View> tiles = new ArrayList<>();
+    private boolean v3OptionsShown;
     private boolean dirty = true;
     private java.util.Locale shownLocale; // the TV's language (and region) when the page was built
     private String focusedKey;
@@ -325,6 +326,7 @@ public class MainActivity extends Activity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
+        if (intent.getBooleanExtra("overlook-rebuild", false)) { recreate(); return; }
         if (saveConfig(intent)) {
             buildTiles();
             applyOptions();
@@ -362,6 +364,7 @@ public class MainActivity extends Activity {
             if (eq > 0) e.putString("o." + kv.substring(0, eq).trim(), kv.substring(eq + 1).trim());
         }
         e.apply();
+        V3Host.configurationChanged(this, apps, options);
         dirty = true;
         return true;
     }
@@ -401,12 +404,21 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        if (V3Host.selected(this) && !getIntent().getBooleanExtra("overlook-controls", false)) {
+            try { startActivity(new Intent().setClassName(this, "dev.couchtv.ontv.HomeActivity")); return; }
+            catch (Exception ignored) { /* Native home remains usable if v3 cannot open. */ }
+        }
+        HelperRecovery.start(this);
         // Rebuild only when apps were installed, removed or updated.
         if (dirty) {
             dirty = false;
             buildTiles();
         }
         refreshVersion();
+        if (getIntent().getBooleanExtra("overlook-controls", false) && !v3OptionsShown) {
+            v3OptionsShown = true;
+            root.post(this::showOptions);
+        }
         wallpaper.start();
         root.removeCallbacks(tick);
         tick.run();
@@ -446,7 +458,12 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public void onBackPressed() { /* home screen: nothing to go back to */ }
+    public void onBackPressed() {
+        if (V3Host.selected(this)) {
+            getIntent().removeExtra("overlook-controls");
+            try { startActivity(new Intent().setClassName(this, "dev.couchtv.ontv.HomeActivity")); } catch (Exception ignored) { }
+        }
+    }
 
     // The remote's input button, on remotes that have one, opens Source.
     @Override
@@ -538,7 +555,7 @@ public class MainActivity extends Activity {
         if (!sources().isEmpty()) addChip(SOURCE, "HDMI", new LineIcon(LineIcon.HDMI), null);
         addChip(MORE, Strings.t("Options"), new LineIcon(LineIcon.MORE), null);
         TextView versionName = text(px(isV2() ? 24 : 26), Color.WHITE, semibold);
-        versionName.setText(isV2() ? "v2" : "v1");
+        versionName.setText(V3Host.selected(this) ? "v3" : isV2() ? "v2" : "v1");
         addChip(VERSION, "Switch home screen version", null, versionName);
         refreshVersion();
         netState = -1;
@@ -755,13 +772,7 @@ public class MainActivity extends Activity {
     private void open(String key) {
         Intent i;
         if (VERSION.equals(key)) {
-            panel("Home screen version", java.util.Arrays.asList(
-                    (isV2() ? "✓ " : "") + "v2 · Scenic dock",
-                    (isV2() ? "" : "✓ ") + "v1 · Classic home"), null, which -> {
-                setOpt("version", which == 0 ? "v2" : "v1");
-                if (which == 0) setOpt("layout", "scenic");
-                buildTiles();
-            }, null, "Newest version first. Your selection is saved.");
+            V3Host.versions(this);
             return;
         } else if (ADD.equals(key)) {
             showAddMenu(-1);
@@ -1256,6 +1267,7 @@ public class MainActivity extends Activity {
 
     private void setOpt(String name, String value) {
         getSharedPreferences(PREFS, 0).edit().putString("o." + name, value).apply();
+        V3Host.optionChanged(this, name, value);
     }
 
     private boolean on(String name, boolean def) {
