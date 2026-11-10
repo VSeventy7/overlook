@@ -4,8 +4,9 @@
 
 ### An Apple TV-style home screen for Android TV.
 
-A new landscape photo every day, your apps in one clean row, and nothing else.
+Couch TV-based v3 by default, with classic v1 and Scenic dock v2 one switch away. Your app setup and PatchWall controls stay available.
 
+<p>Classic v1 remains available:</p>
 <img src="docs/home-screen.jpg" alt="Overlook: a landscape photo with one row of apps and the Wi-Fi name, options, Settings and clock at the top right" width="100%">
 
 </div>
@@ -15,6 +16,8 @@ junk off an Android TV and swaps its home screen for a tiny, calm one. Overlook 
 gives the home screen an Apple TV look.
 
 ## What you get
+
+V3 adds Couch TV’s scene clock, viewing rail, app dock, Home settings, local search/playback backend and optional paired phone remote. The original Overlook features below remain available through the legacy versions and Controls. Build now needs Node/npm and Python 3 alongside the JDK/Android SDK; the pinned Gradle wrapper builds the Kotlin integration.
 
 - **A new photo every day.** The background is a landscape from Wikimedia Commons' featured pictures:
   mountains, lakes, coasts, sunsets and more. That's about 800 photos, so over two years before one
@@ -79,7 +82,7 @@ installed, it's replaced, because the two are signed with different keys.
 
 ## Home screen versions
 
-The top-right version control lists **v2 · Scenic dock** first, followed by **v1 · Classic home** (original styling plus a compact Continue watching row). V2 uses compact artwork cards and app tiles, a large live clock/date, and wallpaper that darkens progressively toward the bottom. The choice is saved; v1 is the default for new installations. V2 reads shared Android TV Watch Next entries when permitted; services may expose no activity. On the tested Android TV 9 device, real YouTube, Crunchyroll and JioHotstar entries appeared.
+The top-right version control lists **v3 · Couch TV**, **v2 · Scenic dock**, then **v1 · Classic home**. V3 is the default on supported Android versions; your later selection persists. V3 copies Couch TV’s on-TV interface/backend and retains Overlook’s clock/date, original wallpaper options, app setup, Refresh and global PatchWall shortcuts. V1/v2 remain available. See [v3 setup, controls and limits](docs/v3-couch-tv.md). Streaming services still decide whether playback metadata is readable; Netflix on the tested TV exposes no title/artwork.
 
 
 See [Android TV / Google TV versions](devices/android-google-tv/README.md). V2 has been checked on Android TV 9: switching layouts, selection persistence, the TV listings permission flow and real shared YouTube entries. Select the shelf access message and allow TV listings when prompted. Other services depend on the entries they share.
@@ -178,6 +181,7 @@ If the TV is stuck restarting, see [TV Detox's help](https://github.com/Ansub/tv
 
 ## Credits
 
+- [Couch TV](https://github.com/Seagey/couch-tv) by Seagey: v3’s UI and on-TV backend, MIT License. The pinned source and notices are retained under `vendor/couch-tv`; adaptations live under `v3`.
 - [TV Detox](https://github.com/Ansub/tv-detox) by Ansub Khan: the home screen this is built on, the
   scripts and the cleanup guide. MIT License.
 - [Inter](https://rsms.me/inter/) by Rasmus Andersson: the font, under the SIL Open Font License
@@ -187,9 +191,10 @@ If the TV is stuck restarting, see [TV Detox's help](https://github.com/Ansub/tv
 
 MIT License, see [LICENSE](LICENSE).
 
-The **Refresh** button beside Continue watching reloads the TV’s shared viewing feed and optional local playback history. It is available in v1 and v2. See [playback tracking and artwork](docs/playback-history.md) for activation, privacy and service limitations.
+The **Refresh** button beside Continue watching reloads the TV’s shared viewing feed and optional local playback history. It is available in all three versions. See [playback tracking and artwork](docs/playback-history.md) for activation, privacy and service limitations.
 
 
 ## Timeline
 
+- 2026-11-10 23:01 IST: Documented Couch TV-based default v3, preserved v1/v2, custom controls and streaming-data limits.
 - 2026-11-10 20:54 IST: Documented optional local playback history, matching artwork and TV-private helper recovery in 1.7.0.

@@ -1,6 +1,6 @@
 # Architecture
 
-Status: Existing stack verified; current feature design follows the owner's approved tracking/recovery scope and online artwork choice. New TV permissions remain subject to explicit activation approval.
+Status: V3 scope and Couch TV design explicitly approved by the owner; current implementation and TV checks are documented below. Earlier v1/v2 behavior remains preserved.
 
 ## Verified current system
 
@@ -32,8 +32,14 @@ Use JVM tests for qualification, normalization/merge and ADB protocol/key encodi
 
 Other Android versions, TLS pairing, hosted services, imported account history and subscription renewals are outside this change. No external account/key provisioning is authorized by the artwork decision.
 
+## V3 — approved scope
+
+For v3, integrate the vendored Couch TV on-TV Kotlin application and TV web assets into the same signed Overlook APK. Keep its server loopback-only by default, reuse the already authorized TV-private ADB identity, and remove automatic grants/package changes. Existing Java home screens and global shortcuts remain available. Optional remote/account integrations require their own user configuration.
+
 ## Timeline
 
+- 2026-11-10 23:01 IST: Integrated and validated v3 on the existing Mi TV, with v1/v2 fallback, stronger gradient, imported wallpaper, original controls and no automatic TV grants/package changes.
+- 2026-11-10 22:28 IST: For v3, integrate the vendored Couch TV on-TV Kotlin application and TV web assets into the same signed Overlook APK. Keep its server loopback-only by default, reuse the already authorized TV-private ADB identity, and remove automatic grants/package changes. Existing Java home screens and global shortcuts remain available. Optional remote/account integrations require their own user configuration.
 - 2026-11-10 21:02 IST: Verified the low-RAM notification restriction and private-key helper startup; added the narrow diagnostic fallback and single-instance recovery lock.
 - 2026-11-10 20:54 IST: Recorded observed Java/Android/helper architecture and the approved 30-day/local-history and online-artwork choices. Planned standard media-session access and private local-ADB recovery with explicit owner activation.
 - 2026-11-01: Created interview scaffold; project decisions were not yet approved.

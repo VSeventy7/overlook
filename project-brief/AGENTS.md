@@ -2,7 +2,7 @@
 Project folder: overlook.
 Existing root documentation to inspect: `../DESIGN.md`, `../PRODUCT.md`, `../README.md`.
 
-Status: Current feature rules reconciled with the owner’s explicit scope, existing commands and shared Notion instructions. Future UI choices remain deferred by the owner.
+Status: V3 scope and Couch TV design explicitly approved by the owner; current implementation and TV checks are documented below. Earlier v1/v2 behavior remains preserved.
 
 ## Before work
 
@@ -35,9 +35,15 @@ Observed commands on this Mac:
 
 ## Interview questions — ask only after the first three documents
 
-Current answers are established by the shared Notion instructions, existing verified workflow and this conversation. Routine Java implementation choices may follow the existing stack. New TV permissions are activation gates; deferred UI elements do not authorize a redesign. Ask about materially new product/security decisions when needed, without repeating settled approvals.
+Current answers are established by the shared Notion instructions, existing verified workflow and this conversation. Routine Java implementation choices may follow the existing stack. New TV permissions are activation gates; new UI work needs explicit scope; the current Couch TV-based v3 is explicitly approved. Ask about materially new product/security decisions when needed, without repeating settled approvals.
+
+## V3 — approved scope
+
+The owner authorized copying Couch TV into v3 and making it the default. UI deferral applies only to the earlier playback work; the v3 design is now explicitly selected. Preserve all Overlook custom controls and versions, upstream license notices, signing key and data. Do not run upstream installers or automatic grant/package-change steps.
 
 ## Timeline
 
+- 2026-11-10 23:01 IST: Integrated and validated v3 on the existing Mi TV, with v1/v2 fallback, stronger gradient, imported wallpaper, original controls and no automatic TV grants/package changes.
+- 2026-11-10 22:28 IST: The owner authorized copying Couch TV into v3 and making it the default. UI deferral applies only to the earlier playback work; the v3 design is now explicitly selected. Preserve all Overlook custom controls and versions, upstream license notices, signing key and data. Do not run upstream installers or automatic grant/package-change steps.
 - 2026-11-10 20:54 IST: Reconciled the current feature workflow with verified local commands, shared task/PR policy, and the owner’s TV permission, data-preservation and deferred-UI constraints.
 - 2026-11-01: Created project agent workflow and interview scaffold.

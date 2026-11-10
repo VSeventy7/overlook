@@ -8,3 +8,10 @@ key.jks
 .impeccable/review/
 .impeccable/mocks/
 .impeccable/build/
+
+# Generated v3 build artifacts
+**/node_modules/
+vendor/couch-tv/remote/dist/
+v3/android/.gradle/
+v3/android/**/build/
+v3/android/local.properties
