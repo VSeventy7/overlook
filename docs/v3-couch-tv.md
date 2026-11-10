@@ -43,7 +43,7 @@ Automatic upstream permission grants, wireless-debugging activation and launcher
 
 `build-native.sh` is an intermediate/development Java build; use `build.sh` for the complete release. No private keys, TV screenshots, personal configuration or generated build/dependency directories enter Git.
 
-The APK retains Couch TV’s MIT license, background-photo attribution/CC terms and Inter/Antonio OFL notices. All68 shipping TV/remote rasters have their pinned upstream origin embedded as metadata; no visual image content was changed. `v3/licenses/asset-provenance.json` records original upstream hashes and annotated shipping hashes. Source code remains separate from adaptations; vendored raster files differ from upstream only by their origin metadata. Assets and notices are bundled alongside the page.
+The APK retains Couch TV’s MIT license, background-photo attribution/CC terms and Inter/Antonio OFL notices. All68 shipping TV/remote rasters retain their pinned upstream origin metadata (embedded where supported, with adjacent WebP sidecars); no visual image content was changed. `v3/licenses/asset-provenance.json` records original upstream hashes and annotated shipping hashes. Source code remains separate from adaptations; vendored raster files differ from upstream only by their origin metadata. Assets and notices are bundled alongside the page.
 
 ## Validation
 
