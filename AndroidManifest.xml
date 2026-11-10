@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ansub.tvhome" android:versionCode="27" android:versionName="1.6.8">
+    package="com.ansub.tvhome" android:versionCode="28" android:versionName="1.7.0">
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
     <!-- Optional Watch Next feed; some firmware restricts this to the system launcher. -->
     <uses-permission android:name="android.permission.READ_TV_LISTINGS" />
@@ -49,6 +49,10 @@
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
             <meta-data android:name="android.accessibilityservice" android:resource="@xml/info_overlay" />
+        </service>
+        <service android:name=".PlaybackTracker" android:label="Overlook playback history"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:exported="true">
+            <intent-filter><action android:name="android.service.notification.NotificationListenerService" /></intent-filter>
         </service>
         <!-- Shell-only attachment of the optional recent-task helper. -->
         <provider android:name=".RecentAppsProvider" android:authorities="com.ansub.tvhome.recents"

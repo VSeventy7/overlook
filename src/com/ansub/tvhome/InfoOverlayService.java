@@ -75,6 +75,7 @@ public final class InfoOverlayService extends AccessibilityService {
     };
 
     @Override protected void onServiceConnected() {
+        HelperRecovery.start(this);
         connected = true;
         instance = this;
         windows = (WindowManager) getSystemService(WINDOW_SERVICE);
